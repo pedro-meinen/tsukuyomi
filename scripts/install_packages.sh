@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./config/packages.conf
+source ../config/packages.conf
 source ./utils.sh
 
 check_command "yay"
