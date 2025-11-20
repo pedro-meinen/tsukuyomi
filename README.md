@@ -1,4 +1,4 @@
-# Tsukuyomi 🌙 <img src="./assets/logo.jpg" alt="Logo Tsukuyomi" style="height: 200px; float: right;" />
+# Tsukuyomi 🌙 <img src="./assets/logo.jpg" alt="Logo Tsukuyomi" style="height: 200px; float: right; margin-left:10px;" />
 > Script de instalacao e configuracao automatizada do Arch Linux
 
 ## Sobre
