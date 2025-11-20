@@ -3,4 +3,5 @@
 . ./scripts/install_yay.sh
 . ./scripts/install_packages.sh
 . ./scripts/clone_dotfiles.sh
+. ./scripts/link_configs.sh
 . ./scripts/setup_python.sh
