@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
-if ! command -v pacman >/dev/null 2>&1; then
-  echo "comando pacman, nao foi encontrado. Instale o programa e tente novamente"
-  exit 1
-fi
+source ./utils.sh
 
-if ! command -v git >/dev/null 2>&1; then
-  echo "comando git, nao foi encontrado. Instale o programa e tente novamente"
-  exit 1
-fi
+check_command pacman
+check_command git
 
 sudo pacman -S --needed base-devel
 
 git clone https://aur.archlinux.org/yay.git ~/yay
-cd ~/yay
+cd ~/yay || panic "Nao foi possivel encontrar o diretorio 'yay'"
 makepkg -si
