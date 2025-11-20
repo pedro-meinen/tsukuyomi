@@ -8,6 +8,7 @@ echo "Iniciando instalacao..."
 source ./scripts/install_yay.sh
 source ./scripts/install_packages.sh
 source ./scripts/enable_services.sh
+source ./scripts/setup_docker.sh
 source ./scripts/clone_dotfiles.sh
 source ./scripts/link_configs.sh
 source ./scripts/setup_python.sh
