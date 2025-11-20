@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
-. ./scripts/install_yay.sh
-. ./scripts/install_packages.sh
-. ./scripts/clone_dotfiles.sh
-. ./scripts/link_configs.sh
-. ./scripts/setup_python.sh
+source ./scripts/utils.sh
+
+print_banner
+echo "Iniciando instalacao..."
+
+source ./scripts/install_yay.sh
+source ./scripts/install_packages.sh
+source ./scripts/clone_dotfiles.sh
+source ./scripts/link_configs.sh
+source ./scripts/setup_python.sh
+
+echo "Instalacao completa!"
