@@ -1,12 +1,12 @@
-# Tsukuyomi 🌙 <img src="./assets/logo.jpg" alt="Logo Tsukuyomi" style="height: 200px; float: right; margin-left:10px;" />
-> Script de instalacao e configuracao automatizada do Arch Linux
-
-## Sobre
+<div align=center>
+  <img src="./assets/logo.jpg" alt="Logo Tsukuyomi" height="200"/>
+  <h1>Tsukuyomi 🌙</h1>
+</div>
 
 O **Tsukuyomi** eh um conjunto de scripts que automatiza a instalacao e configuracao de um ambiente Arch Linux personalizado.  
 Ele foi criado para simplificar o meu processo de setup inicial, garantindo que os meus pacotes, daemons e configuracoes essenciais sejam aplicados de forma consistente.
 
-## Funcionalidades
+## ⚡ Funcionalidades
 
 - Instalacao de um AUR Helper (yay)
 - Instalacao automatica de pacotes via yay
@@ -16,14 +16,14 @@ Ele foi criado para simplificar o meu processo de setup inicial, garantindo que 
 - Gerenciamento de [dotfiles](https://github.com/pedro-meinen/dotfiles) via stow
 - Gerenciamento de daemons com o Systemd
 
-## Requisitos
+## 🧰 Requisitos
 
 - Distribuicao: Arch Linux (ou derivadas)
 - Acesso root (`sudo`)
 - `git`
 - Conexao com a internet
 
-## Instalacao
+## 🚀 Instalacao
 
 Clone o repositorio e execute o script principal:
 
@@ -34,7 +34,7 @@ chmod +x install.sh
 sudo ./install.sh
 ```
 
-## Estrutura do projeto
+## ⚙️ Estrutura do projeto
 
 ```bash
 tsukuyomi/
@@ -44,10 +44,10 @@ tsukuyomi/
 └── README.md         # Este arquivo
 ```
 
-## Inspiracao
+## 🌑 Inspiracao
 
 O nome **Tsukuyomi** foi escolhido em homenagem à deusa japonesa da lua 🌙, simbolizando clareza e serenidade no processo de configuração do sistema.
 
-## Licenca
+## 📜 Licenca
 
 Este projeto está sob a licença MIT. Sinta-se livre para usar, modificar e compartilhar.
