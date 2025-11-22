@@ -1,13 +1,13 @@
-#!/usr/bin/env bash
+setup_docker() {
+  log_info "Inciando configuracao do Docker"
 
-echo "[INFO] Inciando configuracao do Docker"
+  if ! getent group docker > /dev/null; then
+    log_info "criando grudo do Docker"
+    sudo groupadd docker
+  fi
 
-if ! getent group docker > /dev/null; then
-  echo "[INFO] criando grudo do Docker"
-  sudo groupadd docker
-fi
+  log_info "Adicionando $USER ao grupo do Docker"
+  sudo usermod -aG docker "$USER"
 
-echo "[INFO] Adicionando $USER ao grupo do Docker"
-sudo usermod -aG docker "$USER"
-
-echop "[INFO] Configuracao realizada com sucesso!"
+  log_info "Configuracao realizada com sucesso!"
+}

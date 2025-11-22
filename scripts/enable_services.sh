@@ -1,21 +1,20 @@
-#!/usr/bin/env bash
+enable_services() {
+  check_command systemctl
+  check_command rg
 
-source "$TSUKUYOMI_SCRIPTS/utils.sh"
-source "$TSUKUYOMI_CONFIGS/services.conf"
+  log_info "Iniciando setup dos Servicos"
 
-check_command systemctl
-check_command rg
+  for service in "${SERVICES[@]}"; do
+    if systemctl list-unit-files | rg -q "^$service"; then
+      log_info "Ativando servico $service"
+      sudo systemctl enable "$service"
 
-echo "[INFO] Iniciando setup dos Servicos"
-for service in "${SERVICES[@]}"; do
-  if systemctl list-unit-files | rg -q "^$service"; then
-    echo "[INFO] Ativando servico $service"
-    sudo systemctl enable "$service"
+      log_info "Iniciando Servico $service"
+      sudo systemctl start "$service"
+    else
+      log_info "Servico $service nao encontrado, ignorando..."
+    fi
+  done
 
-    echo "[INFO] Iniciando Servico $service"
-    sudo systemctl start "$service"
-  else
-    echo "[INFO] Servico $service nao encontrado, ignorando..."
-  fi
-done
-echo "[INFO] Setup finalizado com sucesso!"
+  log_info "Setup finalizado com sucesso!"
+}

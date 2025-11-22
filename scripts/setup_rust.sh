@@ -1,13 +1,11 @@
-#!/usr/bin/env bash
+setup_rust() {
+  check_command rustup
 
-source "$TSUKUYOMI_SCRIPTS/utils.sh"
+  log_info "Iniciando instalacao das ferramentas do Rust"
 
-check_command rustup
+  rustup default stable
+  rustup component add clippy
+  rustup component add rustfmt
 
-echo "[INFO] Iniciando instalacao das ferramentas do Rust"
-
-rustup default stable
-rustup component add clippy
-rustup component add rustfmt
-
-echo "[INFO] Instalacao realizada com sucesso!"
+  log_info "Instalacao realizada com sucesso!"
+}

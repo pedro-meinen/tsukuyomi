@@ -1,10 +1,7 @@
-#!/usr/bin/env bash
+install_packages() {
+  check_command "yay"
 
-source "$TSUKUYOMI_CONFIGS/packages.conf"
-source "$TSUKUYOMI_SCRIPTS/utils.sh"
-
-check_command "yay"
-
-echo "[INFO] Iniciando instalacao dos pacotes"
-yay -S --needed --noconfirm --answerdiff=None --answeredit=None "${PACKAGES[@]}"
-echo "[INFO] Instalacao realizada com sucesso!"
+  log_info "Iniciando instalacao dos pacotes"
+  yay -S --needed --noconfirm --answerdiff=None --answeredit=None "${PACKAGES[@]}"
+  log_info "Instalacao realizada com sucesso!"
+}

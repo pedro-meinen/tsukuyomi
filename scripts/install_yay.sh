@@ -1,27 +1,25 @@
-#!/usr/bin/env bash
+install_yay() {
+  check_command pacman
+  check_command git
 
-source "$TSUKUYOMI_SCRIPTS/utils.sh"
+  log_info "Iniciando instalacao do yay"
 
-check_command pacman
-check_command git
+  log_info "Instalando base-devel"
+  sudo pacman -S --needed base-devel
 
-echo "[INFO] Iniciando instalacao do yay"
+  if [ -d "$HOME/yay" ]; then
+    log_info "Repositorio yay ja exite."
+  else
+    log_info "Clonando repositorio do yay "
+    git clone https://aur.archlinux.org/yay.git ~/yay
 
-echo "[INFO] Instalando base-devel"
-sudo pacman -S --needed base-devel
+    cd ~/yay || panic "Nao foi possivel encontrar o diretorio 'yay'"
 
-if [ -d "$HOME/yay" ]; then
-  echo "[INFO] Repositorio yay ja exite."
-else
-  echo "[INFO] Clonando repositorio do yay "
-  git clone https://aur.archlinux.org/yay.git ~/yay
+    log_info "Compilando yay"
+    makepkg -si --noconfirm
 
-  cd ~/yay || panic "Nao foi possivel encontrar o diretorio 'yay'"
+    log_info "Instalacao finalizada com sucesso!"
 
-  echo "[INFO] Compilando yay"
-  makepkg -si --noconfirm
-
-  echo "[INFO] Instalacao finalizada com sucesso!"
-
-  cd - || panic "Nao foi possivel retornar ao repositorio anterior"
-fi
+    cd - || panic "Nao foi possivel retornar ao repositorio anterior"
+  fi
+}

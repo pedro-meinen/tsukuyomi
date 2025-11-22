@@ -1,9 +1,20 @@
-#!/usr/bin/env bash
+clone_dotfiles() {
+  check_command git
+  check_command stow
 
-source "$TSUKUYOMI_SCRIPTS/utils.sh"
+  log_info "Clonando repositorio de configuracoes"
+  git clone https://github.com/pedro-meinen/dotfiles ~/dotfiles
+  log_info "Repositorio Clonado com sucesso!"
 
-check_command git
+  log_info "Inciando link das configuracoes"
+  cd ~/dotfiles || panic "Nao foi possivel achar o diretorio de dotfiles"
 
-echo "[INFO] Clonando repositorio de configuracoes"
-git clone https://github.com/pedro-meinen/dotfiles ~/dotfiles
-echo "[INFO] Repositorio Clonado com sucesso!"
+  for dir in */; do
+    log_info "Linkando configuracoes de $dir"
+    stow "$dir"
+  done
+
+  log_info "Configuracoes linkadas com sucesso!"
+
+  cd - > /dev/null || panic "Nao foi possivel retornar ao diretorio anterior"
+}

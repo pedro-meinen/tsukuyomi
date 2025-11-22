@@ -1,25 +1,19 @@
-#!/usr/bin/env bash
+setup_python() {
+  check_command zsh
+  check_command uv
 
-source "$TSUKUYOMI_CONFIGS/python_versions.conf"
-source "$TSUKUYOMI_CONFIGS/uv_tools.conf"
-source "$TSUKUYOMI_SCRIPTS/utils.sh"
+  log_print "Iniciando configuracao do Python"
 
-check_command zsh
-check_command uv
+  log_print "Instalando versoes do Python"
+  uv python install "${PYTHON_VERSIONS[@]}"
+  uv python update-shell
 
-export SHELL=/usr/bin/zsh
+  for tool in "${UV_TOOLS[@]}"; do
+    log_print "Instalando ferramenta $tool"
+    uv tool install "$tool"
+  done
 
-echo "[INFO] Iniciando configuracao do Python"
+  uv tool update-shell
 
-echo "[INFO] Instalando versoes do Python"
-uv python install "${PYTHON_VERSIONS[@]}"
-uv python update-shell
-
-for tool in "${UV_TOOLS[@]}"; do
-  echo "[INFO] Instalando ferramenta $tool"
-  uv tool install "$tool"
-done
-
-uv tool update-shell
-
-echo "[INFO] Configuracao realizada com sucesso!"
+  log_print "Configuracao realizada com sucesso!"
+}

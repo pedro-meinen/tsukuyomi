@@ -28,10 +28,10 @@ Ele foi criado para simplificar o meu processo de setup inicial, garantindo que 
 Clone o repositorio e execute o script principal:
 
 ```bash
-git clone https://pedro-meinen/tsukuyomi.git
+git clone https://github.com/pedro-meinen/tsukuyomi.git
 cd tsukuyomi
 chmod +x install.sh
-sudo ./install.sh
+./install.sh
 ```
 
 ## ⚙️ Estrutura do projeto
@@ -39,14 +39,17 @@ sudo ./install.sh
 ```bash
 tsukuyomi/
 ├── install.sh        # Script principal de instalação
+├── lib/              # Funcoes utilitárias
+├── config/           # Configurações
 ├── scripts/          # Scripts auxiliares
-├── config/           # Configurações e utilitários
+├── assets/           # Assets para esse arquivo
+├── .helix/           # Configuracoes do editor
 └── README.md         # Este arquivo
 ```
 
 ## 🌑 Inspiracao
 
-O nome **Tsukuyomi** foi escolhido em homenagem à deusa japonesa da lua 🌙, simbolizando clareza e serenidade no processo de configuração do sistema.
+O nome **Tsukuyomi** foi escolhido em homenagem ao deus japones da lua 🌙, simbolizando clareza e serenidade no processo de configuração do sistema.
 
 ## 📜 Licenca
 
