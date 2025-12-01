@@ -31,6 +31,7 @@ source "$TSUKUYOMI_SCRIPTS/setup_bun.sh"
 source "$TSUKUYOMI_SCRIPTS/setup_rust.sh"
 source "$TSUKUYOMI_SCRIPTS/grub_theme.sh"
 source "$TSUKUYOMI_SCRIPTS/sddm_theme.sh"
+source "$TSUKUYOMI_SCRIPTS/cleanup.sh"
 
 print_banner
 echo "Iniciando instalacao..."
@@ -64,5 +65,8 @@ grub_theme
 
 # Configurando tema do SDDM
 sddm_theme
+
+# Limpando artefatos
+cleanup
 
 echo "Instalacao completa!"
