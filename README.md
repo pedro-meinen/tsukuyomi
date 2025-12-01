@@ -10,7 +10,7 @@ Ele foi criado para simplificar o meu processo de setup inicial, garantindo que 
 
 - Instalacao de um AUR Helper (yay)
 - Instalacao automatica de pacotes via yay
-- Instalacao e configuracao do meu Display Manager (ly), Window Manager/Wayland Compositor (niri) e Desktop Shell (noctalia-shell)
+- Instalacao e configuracao do meu Display Manager (sddm), Window Manager/Wayland Compositor (niri) e Desktop Shell (noctalia-shell)
 - Instalacao e configuracao das minhas principais linguagens de programacao (pytho, rust e bunjs)
 - Instalacao e configuracao do Docker
 - Gerenciamento de [dotfiles](https://github.com/pedro-meinen/dotfiles) via stow
