@@ -29,6 +29,8 @@ source "$TSUKUYOMI_SCRIPTS/clone_dotfiles.sh"
 source "$TSUKUYOMI_SCRIPTS/setup_python.sh"
 source "$TSUKUYOMI_SCRIPTS/setup_bun.sh"
 source "$TSUKUYOMI_SCRIPTS/setup_rust.sh"
+source "$TSUKUYOMI_SCRIPTS/grub_theme.sh"
+source "$TSUKUYOMI_SCRIPTS/sddm_theme.sh"
 
 print_banner
 echo "Iniciando instalacao..."
@@ -56,5 +58,11 @@ setup_bun
 
 # Configurando o rust
 setup_rust
+
+# Configurando tema do GRUB
+grub_theme
+
+# Configurando tema do SDDM
+sddm_theme
 
 echo "Instalacao completa!"

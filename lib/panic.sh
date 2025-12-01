@@ -1,4 +1,4 @@
 panic() {
-  log_erro "$*"
+  log_error "$*"
   exit 1
 }
